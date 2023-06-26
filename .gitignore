@@ -1,0 +1,5 @@
+# Ignorar archivo que contiene token (personal access token)
+git_accesstoken.txt
+
+# Ignorar archivos con extension .log
+*.log
