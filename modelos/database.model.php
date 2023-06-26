@@ -35,6 +35,10 @@
 			}
 		}
 
+		public function getConn(){
+			return $this->getKey();
+		}
+
 	    /**
 	     * @return mixed
 	     */

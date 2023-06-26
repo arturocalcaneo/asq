@@ -1,9 +1,11 @@
 'use strict'
 
+const raizComponentes = './componentes';
+
 $(document).ready(function(){
 	/**
 	 * Importar Componente:
 	 *  -> Barra de Navegación (Navbar)
 	 * */
-	//$('').load('');
+	$('#header').load(raizComponentes + '/header.component.html');
 });
