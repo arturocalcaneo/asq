@@ -3,50 +3,212 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/bulma.css">
     <title>ASQ - Congreso de Calidad y Productividad | Inicio</title>
+    <style>
+      .hero-image {
+        position: relative;
+        height: 100vh;
+        width: 100%;
+        overflow: hidden;
+      }
+      
+      .hero-image::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(3, 52, 118, 0.4);
+        z-index: 1;
+      }
+
+      .hero-body {
+        position: absolute;
+        z-index: 3;
+        top: 80%;
+        left: 5%;
+        transform: translateY(-100%);
+      }
+
+      .hero-body .title{
+        font-size: 3.35rem;
+        text-transform: uppercase;
+        color: #fff;
+      }
+
+      .hero-body .subtitle{
+        font-size: 2.10rem;
+        text-transform: uppercase;
+        color: #f2f2f2;
+        font-weight: 400;
+      }
+
+      .sticky-header {
+        position: fixed;
+        display: flex;
+        width: 100%;
+        top: 0;
+        z-index: 3;
+
+        background-color: transparent;
+        transition: .2s;
+      }
+
+      #btns_portada{
+        position: absolute;
+        display: inline-block;
+        width: calc(100% - 10%);
+        bottom: 0;
+      }
+
+      #btns_portada button {
+        border-radius: 0 !important;
+      }
+
+      .swiper {
+        width: 600px;
+        height: 300px;
+      }
+
+      /* Configura el swiper como un contenedor flex y centra su contenido verticalmente. */
+      .swiper {
+        height: 100%;
+        display: flex;
+        align-items: center;
+      }
+
+      /* Opcional: Para centrar el contenido de cada diapositiva horizontalmente. */
+      .swiper-slide {
+        text-align: center;
+      }
+
+      .text-context{
+        color: #033476 !important;
+        text-align: justify !important;
+      }
+
+      .title, 
+      .subtitle{
+        color: #000;
+      }
+
+      #organizadores {
+        padding: 8.25rem 6rem;
+      }
+
+      #organizadores .columns .column:first-child {
+
+      }
+
+      @media screen and (max-width: 768px) {
+        #organizadores {
+          padding: 0 0 !important;
+        }
+      }
+    </style>
   </head>
   <body>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+    <script src="assets/js/jquery.min.js"></script>
+
     <!-- ====== HEADER ====== -->
-    <nav class="navbar p-5" id="header" role="navigation" aria-label="main navigation">
-      <!-- El contenido es cargado por JavaScript -->
-    </nav>
+    <nav class="navbar p-5 sticky-header" id="header" role="navigation" aria-label="main navigation"></nav>
     <!-- ====== FIN: HEADER ====== -->
 
-    <!-- ====== SECCIÓN DE INICIO ====== -->
-    <section class="section">
-      
-    </section>
-    <!-- ====== FIN: SECCIÓN DE INICIO ====== -->
+    <!-- ====== IMAGEN DE PORTADA ====== -->
+    <section class="hero is-fullheight" id="portada"></section>
+    <!-- ====== FIN: IMAGEN DE PORTADA ====== -->
 
     <!-- ====== BARRA DE NAVEGACIÓN ====== -->
+    <div id="barra-navegacion"></div>
     <!-- ====== FIN: BARRA DE NAVEGACIÓN ====== -->
 
     <!-- ====== SECCIÓN DE ACERCA DE ====== -->
+    <div class="container is-fluid" id="principal-acercade">
+      <h2 class="title" style="text-transform: uppercase">Acerca del Congreso</h2>
+    </div>
+
+    <section class="section is-large" id="acerca-de"></section>
     <!-- ====== FIN: SECCIÓN DE ACERCA DE ====== -->
 
     <!-- ====== SECCIÓN DE ORGANIZADORES ====== -->
-    <!-- ====== FIN: SECCIÓN DE ORGANIZADORES ====== -->
+    <style type="text/css">
+      #principal-acercade {
+        text-align: center;
+        padding-top: 3rem;
+      }
 
-    <!-- ====== SECCIÓN DE ACERCA DE ====== -->
-    <!-- ====== FIN: SECCIÓN DE ACERCA DE ====== -->
+      @media screen and (min-width: 768px){
+        #acerca-de {
+          padding: 3.5rem 6rem;
+        }
 
-    <!-- ====== SECCIÓN DE ORGANIZADORES ====== -->
+        #principal-organizadores .columns .column:first-child {
+          padding-left: 3rem;
+        }
+
+        #principal-organizadores .columns .column:last-child {
+          padding-right: 3rem;
+        }
+      }
+
+      @media screen and (max-width: 768px){
+        #acerca-de > .container.is-fluid {
+          padding-left: 20px !important;
+          padding-right: 20px !important;
+        }
+
+        #acerca-de {
+          padding: 0 0;
+          padding-bottom: 2rem;
+        }
+
+        #principal-organizadores .columns .column{
+          padding-left: 0;
+          padding-right: 0;
+        }
+      }
+    </style>
+
+    <div class="container is-fluid" id="principal-organizadores" style="text-align: left">
+      <div class="columns">
+        <div class="column">
+          <h2 class="title is-1 text-context" style="text-transform: uppercase">ASQ Itver</h2>
+          <hr style="border: 3px solid #008EE4; width: 64px;" />
+        </div>
+        <div class="column">
+          <p class="text-context subtitle is-4">Somos un grupo de estudiantes de la carrera de Ingeniería Industrial motivados a fomentar el interés y aprendizaje de la comunidad estudiantil, involucrándonos en las actividades académicas y formativas dentro del TECNM Campus Veracruz.</p>
+        </div>
+      </div> <br>
+      <h2 class="title" style="text-align: center; text-transform: uppercase">Organizadores</h2>
+    </div>
+
+    <section class="section is-large" id="organizadores"></section>
     <!-- ====== FIN: SECCIÓN DE ORGANIZADORES ====== -->
 
     <!-- ====== SUB-SECCIÓN DE ASESORES FACULTATIVOS ====== -->
+    <section class="section is-large" id="asesores-facult" style="padding: 8.25rem 6rem"></section>
     <!-- ====== FIN: SUB-SECCIÓN DE ASESORES FACULTATIVOS ====== -->
 
     <!-- ====== SECCIÓN DE CONTADORES (N CONFERENCIAS, N TALLERES, N EMPRESAS) ====== -->
+    <section class="section is-large" id="contador" style="padding: 8.25rem 6rem"></section>
     <!-- ====== FIN: SECCIÓN DE CONTADORES (N CONFERENCIAS, N TALLERES, N EMPRESAS) ====== -->
 
     <!-- ====== SECCIÓN DE PATROCINADORES ====== -->
+    <section class="section is-large" id="patrocinadores" style="padding: 8.25rem 6rem"></section>
     <!-- ====== FIN: SECCIÓN DE PATROCINADORES ====== -->
 
-    <!-- ====== FOOTER DE PÁGINA ====== -->
+    <!-- ====== FOOTER DE PÁGINA ====== --><
+    <footer id="footer"></footer>
     <!-- ====== FIN: FOOTER DE PÁGINA ====== -->
 
-    <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/index.js"></script>
+    <script src="assets/js/header.component.js"></script>
+    <script src="assets/js/acercade.seccion.js"></script>
   </body>
 </html>

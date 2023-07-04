@@ -1,0 +1,132 @@
+<div class="container is-fluid">
+	<!-- Slider main container -->
+	<div class="swiper second">
+	  <!-- Additional required wrapper -->
+	  <div class="swiper-wrapper"></div>
+
+	  <!-- If we need navigation buttons -->
+	  <div class="swiper-button-prev"></div>
+	  <div class="swiper-button-next"></div>
+
+	</div>
+</div>
+
+<script>
+	var i = 0;
+	const container = '.swiper-wrapper';
+
+	for(i; i < 2; i++){
+		$(container).append(`
+		<!-- ==== PRESENTACION 1 ==== -->
+	    <div class="swiper-slide">
+		    <div class="presentacion">
+		    	<div class="imagen">
+		    		<img src="assets/imgs/MesaD_Asesores/Maria_F._Ramirez_Organizador_1.jpg">
+		    	</div>
+		    	<div class="contenido">
+		    		<p class="title is-4 text-context">María F. Ramírez</p>
+			        <p class="subtitle is-6">Presidencia</p>
+		    	</div>
+		    </div>
+		</div>
+	    <!-- ==== PRESENTACION 1 ==== -->
+
+	    <!-- ==== PRESENTACION 2 ==== -->
+	    <div class="swiper-slide">
+	    	<div class="presentacion">
+			  <div class="imagen">
+			    <img src="assets/imgs/MesaD_Asesores/B._Montserrat_Garza_Organizador_1.jpeg">
+			  </div>
+			  <div class="contenido">
+			    <p class="title is-4 text-context">B. Montserrat Garza</p>
+			    <p class="subtitle is-6">Vicepresidencia</p>
+			  </div>
+			</div>
+	    </div>
+	    <!-- ==== PRESENTACION 2 ==== -->
+
+	    <!-- ==== PRESENTACION 3 ==== -->
+	    <div class="swiper-slide">
+	    	<div class="presentacion">
+			  <div class="imagen">
+			    <img src="assets/imgs/MesaD_Asesores/Estela_Barragan_Organizador_1.jpg">
+			  </div>
+			  <div class="contenido">
+			    <p class="title is-4 text-context">Estela Barragán</p>
+			    <p class="subtitle is-6">Vinculación</p>
+			  </div>
+			</div>
+	    </div>
+	    <!-- ==== PRESENTACION 3 ==== -->
+
+	    <!-- ==== PRESENTACION 4 ==== -->
+	    <div class="swiper-slide">
+	    	<div class="presentacion">
+			  <div class="imagen">
+			    <img src="assets/imgs/MesaD_Asesores/L._Joaquin_Campuzano_Organizador_1.png">
+			  </div>
+			  <div class="contenido">
+			    <p class="title is-4 text-context">L. Joaquin Campuzano</p>
+			    <p class="subtitle is-6">Logística</p>
+			  </div>
+			</div>
+	    </div>
+	    <!-- ==== PRESENTACION 4 ==== -->
+
+	    <!-- ==== PRESENTACION 5 ==== -->
+	    <div class="swiper-slide">
+	    	<div class="presentacion">
+			  <div class="imagen">
+			    <img src="assets/imgs/MesaD_Asesores/Fryda_Alfaro_Organizador_1.jpg">
+			  </div>
+			  <div class="contenido">
+			    <p class="title is-4 text-context">Fryda Alfaro</p>
+			    <p class="subtitle is-6">Marketing</p>
+			  </div>
+			</div>
+	    </div>
+	    <!-- ==== PRESENTACION 5 ==== -->
+	`);
+	}
+</script>
+
+<style>
+	.swiper.second {
+		margin-left: 0 !important;
+		margin-right: 0 !important;
+		width: 100%;
+	}
+
+	.swiper.second .presentacion {
+		margin-top: 1.5rem;
+		margin-bottom: 1.5rem;
+		margin-right: 0.15rem;
+		margin-left: 0.15rem;
+
+		background-color: rgba(0,0,0,0.045);
+		padding: 0.65rem;
+	}
+
+	.swiper.second .presentacion .imagen {
+		display: block;
+		position: relative;
+	}
+
+	.swiper.second .presentacion .contenido {
+		text-align: left;
+		padding-top: 0.35rem;
+		padding-bottom: 0.35rem;
+		min-height: 104px;
+	}
+
+	.swiper.second .presentacion .contenido p:first-child{
+		font-size: 1.95rem;
+		text-align: left !important;
+	}
+
+	.swiper.second .presentacion .contenido p:nth-child(2) {
+		font-size: 1.45rem;
+		color: #008EE4;
+		font-weight: 500;
+	}
+</style>

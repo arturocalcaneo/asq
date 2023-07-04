@@ -1,0 +1,39 @@
+<nav class="breadcrumb is-right" aria-label="breadcrumbs" id="secondary-navbar">
+  <ul>
+  	<!-- class="is-active" aria-current="page" -->
+    <li><a href="paquetes.html">Paquetes</a></li>
+    <li><a href="conferencias.html">Conferencias</a></li>
+    <li><a href="talleres.html">Talleres</a></li>
+    <li><a href="visitas.html">Visitas</a></li>
+  </ul>
+</nav>
+
+<style>
+	#barra-navegacion {
+		background-color: #033476;
+		width: 100%;
+		position: relative;
+		display: block;
+		padding: 2.35rem !important;
+	}
+
+	#secondary-navbar {
+		margin-bottom: 0 !important;
+	}
+
+	#secondary-navbar li+li::before {
+		color: unset !important;
+		content: "" !important;
+	}
+
+	#secondary-navbar li a {
+		color: #fff !important;
+		text-transform: uppercase !important;
+		font-size: 1.85rem;
+		font-weight: 600;
+	}
+
+	#secondary-navbar li.is-active > a{
+		color: #FCCF47 !important;
+	}
+</style>
