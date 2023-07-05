@@ -1,0 +1,61 @@
+<div class="container is-fluid">
+	<div class="columns is-mobile columnas-imagenes">
+		<div class="column">
+			<img src="assets/imgs/tenaris_tamsa.png" class="image" width="248" alt="Tenaris Tamsa">
+		</div>
+		<div class="column">
+			<img src="assets/imgs/CarlJr.png" class="image" width="248" alt="Carl Jr">
+		</div>
+		<div class="column">
+			<img src="assets/imgs/icave.png" class="image" width="248" alt="Icave">
+		</div>
+		<div class="column">
+			<img src="assets/imgs/cice.png" class="image" width="248" alt="Cice">
+		</div>
+	</div>
+
+	<div class="columns is-mobile columnas-imagenes">
+		<div class="column">
+			<img src="assets/imgs/acuario_veracruz.png" class="image" width="248" alt="Acuario Veracruz">
+		</div>
+		<div class="column">
+			<img src="assets/imgs/Cemex.png" class="image" width="248" alt="Cemex">
+		</div>
+		<div class="column">
+			<img src="assets/imgs/dairy_queen.png" class="image" width="248" alt="Dairy Queen">
+		</div>
+	</div>
+</div>
+
+<style>
+	#patrocinadores .columns .column img {
+		padding-top: 0 !important;
+	}
+
+	@media screen and (max-width: 512px) {
+		#patrocinadores {
+			padding-left: 1rem !important;
+			padding-right: 1rem !important;
+		}
+	}
+</style>
+
+<script>
+	const verificarDistribucionColumnas = function(){
+		if( $(window).width() <= 512 ){
+			$('.columnas-imagenes').removeClass('is-mobile');
+			$('.columnas-imagenes img').removeAttr('width');
+		}else{
+			$('.columnas-imagenes').addClass('is-mobile');
+			$('.columnas-imagenes img').attr('width','248');
+		}
+	};
+
+	// AL CARGAR EL SCRIPT, EJECUTAR LA FUNCIÓN..
+	$(verificarDistribucionColumnas());
+
+	// CUANDO SE REDIMENSIONE LA VENTANA, EJECUTAR LA FUNCIÓN..
+	$(window).on('resize', function(){
+		verificarDistribucionColumnas();
+	});
+</script>

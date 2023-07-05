@@ -1,23 +1,8 @@
 <div class="container is-fluid">
-	<!-- Slider main container -->
 	<div class="swiper second">
 	  <!-- Additional required wrapper -->
-	  <div class="swiper-wrapper"></div>
-
-	  <!-- If we need navigation buttons -->
-	  <div class="swiper-button-prev"></div>
-	  <div class="swiper-button-next"></div>
-
-	</div>
-</div>
-
-<script>
-	var i = 0;
-	const container = '.swiper-wrapper';
-
-	for(i; i < 2; i++){
-		$(container).append(`
-		<!-- ==== PRESENTACION 1 ==== -->
+	  <div class="swiper-wrapper">
+	  	
 	    <div class="swiper-slide">
 		    <div class="presentacion">
 		    	<div class="imagen">
@@ -29,9 +14,7 @@
 		    	</div>
 		    </div>
 		</div>
-	    <!-- ==== PRESENTACION 1 ==== -->
-
-	    <!-- ==== PRESENTACION 2 ==== -->
+	    
 	    <div class="swiper-slide">
 	    	<div class="presentacion">
 			  <div class="imagen">
@@ -43,9 +26,7 @@
 			  </div>
 			</div>
 	    </div>
-	    <!-- ==== PRESENTACION 2 ==== -->
-
-	    <!-- ==== PRESENTACION 3 ==== -->
+	    
 	    <div class="swiper-slide">
 	    	<div class="presentacion">
 			  <div class="imagen">
@@ -57,9 +38,7 @@
 			  </div>
 			</div>
 	    </div>
-	    <!-- ==== PRESENTACION 3 ==== -->
-
-	    <!-- ==== PRESENTACION 4 ==== -->
+	    
 	    <div class="swiper-slide">
 	    	<div class="presentacion">
 			  <div class="imagen">
@@ -71,9 +50,7 @@
 			  </div>
 			</div>
 	    </div>
-	    <!-- ==== PRESENTACION 4 ==== -->
-
-	    <!-- ==== PRESENTACION 5 ==== -->
+	    
 	    <div class="swiper-slide">
 	    	<div class="presentacion">
 			  <div class="imagen">
@@ -85,19 +62,33 @@
 			  </div>
 			</div>
 	    </div>
-	    <!-- ==== PRESENTACION 5 ==== -->
-	`);
-	}
+	    
+	  </div>
+
+	  <!-- If we need navigation buttons -->
+	  <div class="swiper-button-prev"></div>
+	  <div class="swiper-button-next"></div>
+
+	</div>
+</div>
+
+<script>
+	// DUPLICAR CONTENIDO DEL SWIPER-WRAPPER
+	const firstContainer = '.swiper.second .swiper-wrapper';
+	$(firstContainer).append( $(firstContainer).html() );
 </script>
 
 <style>
-	.swiper.second {
+	.swiper.second,
+	.swiper.third {
 		margin-left: 0 !important;
 		margin-right: 0 !important;
 		width: 100%;
 	}
 
-	.swiper.second .presentacion {
+	.swiper.second .presentacion,
+	.swiper.third .presentacion,
+	.fourth-content .presentacion {
 		margin-top: 1.5rem;
 		margin-bottom: 1.5rem;
 		margin-right: 0.15rem;
@@ -105,26 +96,31 @@
 
 		background-color: rgba(0,0,0,0.045);
 		padding: 0.65rem;
+		text-align: center;
 	}
 
-	.swiper.second .presentacion .imagen {
+	.swiper.second .presentacion .imagen,
+	.swiper.third .presentacion .imagen {
 		display: block;
 		position: relative;
 	}
 
-	.swiper.second .presentacion .contenido {
-		text-align: left;
+	.swiper.second .presentacion .contenido,
+	.swiper.third .presentacion .contenido {
+		text-align: left !important;
 		padding-top: 0.35rem;
 		padding-bottom: 0.35rem;
 		min-height: 104px;
 	}
 
-	.swiper.second .presentacion .contenido p:first-child{
+	.swiper.second .presentacion .contenido p:first-child,
+	.swiper.third .presentacion .contenido p:first-child {
 		font-size: 1.95rem;
 		text-align: left !important;
 	}
 
-	.swiper.second .presentacion .contenido p:nth-child(2) {
+	.swiper.second .presentacion .contenido p:nth-child(2),
+	.swiper.third .presentacion .contenido p:nth-child(2) {
 		font-size: 1.45rem;
 		color: #008EE4;
 		font-weight: 500;
