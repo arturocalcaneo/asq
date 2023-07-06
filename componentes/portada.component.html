@@ -1,29 +1,51 @@
-<div class="hero-image custom">
-  <img src="assets/imgs/portada_inicio.jpg" alt="Imagen" style="object-fit:cover; height:100%; width:100%">
+<div class="image-overlay-container">
+  <img src="assets/imgs/portada_inicio.jpg" alt="Image">
+  <div class="image-overlay"></div>
 </div>
-<div class="hero-body custom" style="width: calc(100% - 5%)">
-  <div style="width: calc(100% - 5%); height: 500px;">
-    <h1 class="title">
-      Congreso de Calidad y <br>Productividad
-    </h1>
-    <p class="subtitle">
-      ASQ, Calidad y Productividad en todas partes <br>
-      16 y 17 de Noviembre
-    </p>
 
-    <div id="btns_portada">
-      <div style="float: left">
-        <a class="button">Comprar Pase</a>
+<div class="hero-body">
+  <div class="content first">
+    <div class="content second">
+      <div class="text-content-port">
+        <h1 class="title">
+          Congreso de Calidad y <br>Productividad
+        </h1>
+        <p class="subtitle">
+          ASQ, Calidad y Productividad en todas partes <br>
+          16 y 17 de Noviembre
+        </p>
       </div>
-      <div style="float: right">
-        <a class="button">Más Información</a>
+    </div>
+
+    <div class="buttons">
+      <div class="first">
+        <button class="button">Comprar Pase</button>
+      </div>
+      <div class="second">
+        <button class="button">Más Información</button>
       </div>
     </div>
   </div>
 </div>
 
-<style>
-  #btns_portada .button {
+<style type="text/css">
+  .image-overlay {
+    position: absolute;
+    top: 0;
+    left: -48px;
+    width: calc( 100% + 96px );
+    height: 100vh;
+    background-color: blue;
+    opacity: 0.225;
+  }
+
+  .image-overlay-container img {
+    position: absolute;
+    top: -12px;
+    left: 0;
+  }
+
+  #portada .hero-body .buttons .button {
     font-size: 1.5rem !important;
     color: #008EE4 !important;
     font-weight: 500;
@@ -32,5 +54,83 @@
     border-radius: 0 0 !important;
     
     /* LOS BOTONES SE DESACOMODAN AL LLEGAR A DISPOSITIVOS MÓVILES  */
+  }
+
+  #portada .hero-body .content, 
+  #portada .hero-body .buttons {
+    position: relative;
+    width: 100%;
+    display: block;
+  }
+
+  #portada .hero-body .buttons {
+    overflow: hidden !important;
+  }
+
+  #portada .hero-body .content.first {
+    height: calc(100vh - 96px);
+  }
+
+  #portada .hero-body .content.second {
+    height: calc(100vh - 192px);
+  }
+
+  #portada .hero-body .buttons .first {
+    float: left !important;
+    display: inline-block;
+  }
+
+  #portada .hero-body .buttons .second {
+    float: right !important;
+    display: inline-block;
+  }
+
+  #portada .hero-body .content.second .title { font-size: 4.75rem; }
+
+  #portada .hero-body .content.second .subtitle { font-size: 2rem; }
+
+  @media screen and (min-width: 512px) {
+    #portada .text-content-port {
+      padding-top: calc( 104px + 8rem );
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
+    #portada .hero-body .content.second .title { font-size: 3.75rem; }
+
+    #portada .hero-body .content.second .subtitle { font-size: 1.8rem; }
+  }
+
+  @media screen and (max-width: 768px) {
+    #portada .text-content-port {
+      padding-top: calc( 104px + 6rem );
+    }
+
+    #portada .hero-body .content.second .title { font-size: 3.25rem; }
+
+    #portada .hero-body .content.second .subtitle { font-size: 1.65rem; }
+  }
+
+  /* CONFIGURACION DE ESTILOS PARA LOS BOTONES  */
+  @media screen and (max-width: 592px) {
+    #portada .hero-body .buttons .first, 
+    #portada .hero-body .buttons .second {
+      float: none !important;
+      width: 100% !important;
+    }
+
+    #portada .hero-body .buttons .button {
+      width: 100% !important;
+    }
+
+    #portada .hero-body .content.second {
+        height: calc(100vh - 228px);
+    }
+  }
+
+  @media screen and (max-width: 511px) {
+    #portada .text-content-port {
+      padding-top: calc( 104px );
+    }
   }
 </style>
