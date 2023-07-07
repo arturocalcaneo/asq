@@ -1,15 +1,23 @@
 <div class="container is-fluid">
-	<div class="columns">
+	<div class="columns is-desktop">
 		<div class="column">
 			<!-- Slider main container -->
 			<div class="swiper first">
 			  <!-- Additional required wrapper -->
 			  <div class="swiper-wrapper">
 			    <!-- Slides -->
-			    <div class="swiper-slide"> <img src="assets/imgs/congreso1.png"> </div>
-			    <div class="swiper-slide"> <img src="assets/imgs/congreso1.png"> </div>
-			    <div class="swiper-slide"> <img src="assets/imgs/congreso1.png"> </div>
-				<div class="swiper-slide"> <img src="assets/imgs/congreso1.png"> </div>
+			    <div class="swiper-slide">
+			    	<img src="assets/imgs/congreso1.png" class="image">
+			    </div>
+			    <div class="swiper-slide">
+			    	<img src="assets/imgs/congreso1.png" class="image">
+			    </div>
+			    <div class="swiper-slide">
+			    	<img src="assets/imgs/congreso1.png" class="image">
+			    </div>
+				<div class="swiper-slide">
+					<img src="assets/imgs/congreso1.png" class="image">
+				</div>
 			  </div>
 
 			  <!-- If we need navigation buttons -->
@@ -19,10 +27,42 @@
 			</div>
 		</div>
 		<div class="column">
-			<p class="is-size-3 is-size-5-mobile text-context" style="padding-top: 2rem">
+			<p class="is-size-custom text-context" style="padding-top: 2rem">
 				El <b>Congreso Nacional de Calidad y Productividad</b> es un evento organizado por
 				el capitulado estudiantil de la <b>American Society for Quality (ASQ)</b> con sede en el <b>Instituto Tecnológico de Veracruz (TECNM Campus Veracruz).</b> El cual tiene el objetivo de fomentar el interés y aprendizaje de los participantes en la calidad y productividad de los procesos en los diferentes sectores industriales.
 			</p>
 		</div>
 	</div>
 </div>
+
+<style>
+	@media screen and (min-width: 1920px) {
+		.is-size-custom {
+			font-size: 1.925rem;
+		}
+	}
+
+	@media screen and (min-width: 1679px) {
+		.is-size-custom {
+			font-size: 1.85rem;
+		}
+	}
+
+	@media screen and (max-width: 1678px) {
+		.is-size-custom {
+			font-size: 1.65rem;
+		}
+	}
+
+	@media screen and (max-width: 1440px) {
+		.is-size-custom {
+			font-size: 1.425rem;
+		}
+	}
+
+	@media screen and (max-width: 1300px) {
+		.is-size-custom {
+			font-size: 1.25rem;
+		}
+	}
+</style>

@@ -1,5 +1,5 @@
 <div class="image-overlay-container">
-  <img src="assets/imgs/portada_inicio_mb.jpg" alt="Image">
+  <img id="imagen-portada" src="assets/imgs/portada_inicio.jpg" alt="ASQ ITVer">
   <div class="image-overlay"></div>
 </div>
 
@@ -19,10 +19,10 @@
 
     <div class="buttons">
       <div class="first">
-        <button class="button">Comprar Pase</button>
+        <a class="button" href="#">Comprar Pase</a>
       </div>
       <div class="second">
-        <button class="button">Más Información</button>
+        <a class="button" href="#">Más Información</a>
       </div>
     </div>
   </div>
@@ -131,3 +131,21 @@
     }
   }
 </style>
+
+<script>
+  const establecerImagenRelacionTam = function(){
+    $('#imagen-portada').attr('src', 'assets/imgs/');
+
+    if( $(window).width() < 1280 ) {
+      $('#imagen-portada').attr('src', 'assets/imgs/portada_inicio_mb.jpg');
+    }else{
+      $('#imagen-portada').attr('src', 'assets/imgs/portada_inicio.jpg');
+    }
+  };
+
+  $(establecerImagenRelacionTam());
+
+  $(window).on('resize', function(){
+    establecerImagenRelacionTam();
+  });
+</script>
