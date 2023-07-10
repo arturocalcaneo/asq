@@ -137,4 +137,27 @@ $(document).ready(function(){
 	 * */
 
 	$('#patrocinadores').load( raizSecciones + '/patrocinadores.seccion.html' );
+
+	/**
+	 * Calcular Altura más alta de las presentaciones de los Sliders
+	 * */
+	equilibrarAlturasPresentaciones( '.swiper.second' );
+	equilibrarAlturasPresentaciones( '.swiper.third' );
 });
+
+const equilibrarAlturasPresentaciones = function(classnames, maxWidth = 1023) {
+	const presentaciones = $( classnames + ' .presentacion' );
+	var mayor = $( $(presentaciones)[0] ).height();
+
+	Object.keys(presentaciones).forEach(function(index){
+		if( parseInt( index ) != "NaN" && parseInt( index ) < 5 ) {
+			if( mayor < $(presentaciones[index]).height() ){
+				mayor = $(presentaciones[index]).height();
+			}
+		}
+	});
+
+	if( $(window).width() > maxWidth ) {
+		$( classnames + ' .presentacion' ).css({ height: mayor });
+	}
+};

@@ -1,20 +1,37 @@
 <div class="hero-body">
 	<div class="columns is-desktop">
 		<div class="column">
-			<p class="title">N</p>
+			<p style="display: none">103 Conferencias</p>
+			<p class="title" id="conferencias-count-title">0</p>
 			<p class="subtitle">Conferencias</p>
 		</div>
 		<div class="column">
-			<p class="title">N</p>
+			<p style="display: none">41 Talleres</p>
+			<p class="title" id="talleres-count-title">0</p>
 			<p class="subtitle">Talleres</p>
 		</div>
 		<div class="column">
-			<p class="title">N</p>
+			<p style="display: none">20 Empresas</p>
+			<p class="title" id="empresas-count-title">0</p>
 			<p class="subtitle">Empresas</p>
 		</div>
 	</div>
 </div>
+<script type="module">
+	import { CountUp } from './assets/js/countUp.min.js';
 
+	const countsUp = [];
+	const options = { enableScrollSpy: true/*, scrollSpyOnce: true*/ };
+
+	countsUp.push( new CountUp('conferencias-count-title',103, options) );
+	countsUp[0].start(() => {
+		countsUp.push( new CountUp('talleres-count-title', 41, options) );
+		countsUp[1].start(() => {
+			countsUp.push( new CountUp('empresas-count-title', 20, options) );
+			countsUp[2].start();
+		});
+	});
+</script>
 <style>
 	#contador .hero-body,
 	#contador .columns {
