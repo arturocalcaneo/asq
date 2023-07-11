@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="assets/css/bulma.css">
+    <title>ASQ - Congreso de Calidad y Productividad | Recuperar Contraseña</title>
+  </head>
+  <body>
+    <script src="assets/js/jquery.min.js"></script>
+
+    <!-- ====== SUB-BARRA DE NAVEGACIÓN ====== -->
+    <div id="barra-navegacion"></div>
+    <!-- ====== FIN: SUB-BARRA DE NAVEGACIÓN ====== -->
+
+    <div class="container for-mobile">
+      <h1 style="text-align: center; text-transform: uppercase" 
+          class="title has-text-black is-3 mt-6 mb-3">Recuperar Contraseña</h1>
+
+      <form action="peticiones/recuperarcontra.control.php" method="POST">
+        <div class="field">
+          <label class="label">Correo Electrónico <span class="has-text-danger">*</span></label>
+          <div class="control">
+            <input class="input" type="text" name="correo" placeholder="example@gmail.com">
+          </div>
+          <p class="help">Introduce el correo electrónico de la cuenta a la que has perdido acceso.</p>
+        </div>
+
+        <input type="submit" name="Iniciar Sesión" style="display: none" id="submit-form">
+      </form> <br>
+
+      <a class="button is-warning mb-4" style="text-transform: uppercase" onclick="$('#submit-form').click()">Continuar</a>
+      <a class="button mb-4" style="text-transform: uppercase" href="iniciarsesion.html">Volver</a>
+    </div>
+
+    <style>
+      .container.for-mobile form input {
+        border-radius: 7px !important;
+        border: 1px solid rgba(0,0,0,0.275);
+      }
+
+      .container.for-mobile .button {
+        border-radius: 0 !important;
+        font-weight: 500 !important;
+        letter-spacing: 1px;
+      }
+
+      @media screen and (max-width: 1024px){
+        .container.for-mobile {
+          padding-left: 1.75rem;
+          padding-right: 1.75rem;
+        }
+      }
+    </style>
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/iniciarsesion.js"></script>
+  </body>
+</html>

@@ -4,10 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="assets/css/bulma.css">
-    <title>ASQ - Congreso de Calidad y Productividad | Crear Cuenta</title>
+    <title>ASQ - Congreso de Calidad y Productividad | Mi Cuenta</title>
   </head>
   <body>
-    <script src="assets/js/jquery.min.js"></script>
 
     <!-- ====== SUB-BARRA DE NAVEGACIÓN ====== -->
     <div id="barra-navegacion"></div>
@@ -15,45 +14,63 @@
 
     <div class="container for-mobile">
       <h1 style="text-align: center; text-transform: uppercase" 
-          class="title has-text-black is-3 mt-6 mb-3">Crear una Cuenta</h1>
+          class="title has-text-black is-3 mt-6 mb-5">Datos Personales</h1>
 
-      <form action="peticiones/crearcuenta.control.php" method="POST">
+      <form action="peticiones/iniciarsesion.control.php" method="POST">
         <div class="field">
-          <label class="label">Nombre(s) <span class="has-text-danger">*</span></label>
+          <label class="label">Nombres(s) (Así aparecerá en tu constancia)</label>
           <div class="control">
             <input class="input" type="text" name="nombres" required>
           </div>
-          <p class="help">Introduce tu nombre completo.</p>
         </div>
         <div class="field">
-          <label class="label">Apellidos <span class="has-text-danger">*</span></label>
+          <label class="label">Apellidos (Así aparecerá en tus constancia)</label>
           <div class="control">
             <input class="input" type="text" name="apellidos" required>
           </div>
-          <p class="help">Introduce tus apellidos (comenzando por el paterno de preferencia).</p>
         </div>
         <div class="field">
-          <label class="label">Correo Electrónico <span class="has-text-danger">*</span></label>
+          <label class="label">Número de Seguridad Social (Necesario para la visita industrial)</label>
           <div class="control">
-            <input class="input" type="text" name="correo" placeholder="example@gmail.com" required>
+            <input class="input" type="number" name="num_ss" maxlength="11" required>
           </div>
-        </div>
-        <div class="field">
-          <label class="label">Contraseña <span class="has-text-danger">*</span></label>
-          <div class="control">
-            <input class="input" type="password" name="contra" required>
-          </div>
-          <p class="help">Recomendamos guardar un respaldo de tu contraseña en un lugar seguro. Si la olvidas, la puedes recuperar <a href="recuperarcontra.html">aquí</a>.</p>
         </div>
 
         <input type="submit" name="Iniciar Sesión" style="display: none" id="submit-form">
       </form> <br>
 
-      <a class="button is-info mb-6" style="text-transform: uppercase" onclick="$('#submit-form').click()">Continuar</a>
+      <a class="button is-warning mb-6" style="text-transform: uppercase" onclick="$('#submit-form').click()">Actualizar Datos Personales</a>
       <a class="button mb-6" style="text-transform: uppercase" href="index.html">Volver</a>
+
+      <hr/>
     </div>
 
+    <!-- ====== MI CUENTA ====== -->
+    <div class="container for-mobile mb-6">
+      <h1 style="text-align: center; text-transform: uppercase" 
+        class="title has-text-black is-3 mt-6 mb-5">Mi Cuenta</h1>
+
+      <div class="card micuenta">
+        <div class="card-content">
+          <p class="title has-text-white mb-6">Membresía</p>
+          <p class="subtitle has-text-white">... Hello World...</p>
+        </div>
+      </div>
+    </div>
+    <!-- ====== MI CUENTA ====== -->
+
     <style>
+      .card.micuenta {
+        background: rgb(9,199,235) !important;
+        background: linear-gradient(90deg, rgba(9,199,235,1) 0%, rgba(19,108,189,1) 34%, rgba(163,5,247,1) 100%) !important;
+
+        border-top-left-radius: 32px;
+        border-bottom-left-radius: 32px;
+
+        border-top-right-radius: 56px;
+        border-bottom-right-radius: 56px;
+      }
+
       .container.for-mobile form input {
         border-radius: 7px !important;
         border: 1px solid rgba(0,0,0,0.275);
